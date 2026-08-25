@@ -60,6 +60,10 @@ Run these two commands, one at a time, in the terminal:
 npx skills@latest add mattpocock/skills
 ```
 
+> **Windows note:** If the command above returns an error, try:
+>
+> `npx.cmd skills@latest add mattpocock/skills`
+
 1. Your keyboard strokes will be to paste the above then hit enter to run.
 
 2. If prompted with `Ok to proceed? (y)`, type `y` and hit `Enter`.

@@ -3,6 +3,8 @@
 > 💡 **Tip:** Press `Ctrl+Shift+V` to view this file as a formatted preview (or `Cmd+Shift+V` on Mac).
 > New to VS Code? Keep [Exercise 0 — VS Code and GitHub Copilot setup](../exercise-00-vscode-setup/exercise-00-vscode-setup.md) open for reference.
 
+This exercise is optional to complete. Valerie will demonstrate the workflow. Feel free to follow along in your own VS Code instance using the guide. If you would like to work through this exercise after the training, here is a [video walkthrough](https://www.youtube.com/watch?v=NuxNCvL0UUA).
+
 **What you'll build:** a custom ArcGIS Experience Builder widget that draws a radar (spider) chart from a configured feature layer, with a rich settings panel.
 
 We'll design it first using `/grill-with-docs`, then build it.
@@ -13,7 +15,11 @@ We'll design it first using `/grill-with-docs`, then build it.
 
 ## Step 1 — Open your Experience Builder Folder in VS Code
 
-We'll be using a different Visual Studio workspace for this exercise, so you can save your edits from Exercises 1-3. You'll work inside the Experience Builder Developer Edition folder you downloaded and unzipped in the pre-work.
+We'll be using a different VS Code workspace for this exercise, so you can save your edits from Exercises 1-3.
+
+Open a new window of VS Code so you can keep these instructions open. In VS Code: **File → New Window**
+
+You'll work inside the Experience Builder Developer Edition folder you downloaded and unzipped in the pre-work.
 
 1. Find where you unzipped the Experience Builder 1.20 files. In this example it's:
    `C:\dev\arcgis-experience-builder-1.20`
@@ -35,6 +41,10 @@ Run these two commands, one at a time, in the terminal:
 ```
 npx skills@latest add mattpocock/skills
 ```
+
+> **Windows note:** If the command above returns an error, try:
+>
+> `npx.cmd skills@latest add mattpocock/skills`
 
 1. Your keyboard strokes will be to paste the above then hit enter to run.
 
@@ -224,7 +234,7 @@ npm start
    https://localhost:3001
 ```
 
-2. Sign in using your Client ID from the pre-work.
+2. Sign in using your Experience Builder Client ID from the pre-work.
 
 3. Create a new experience or import one of your existing Experience Builder apps.
 
@@ -233,5 +243,22 @@ npm start
 5. Add your new **radar chart widget** to your Experience Builder to see it live.
 
 6. Add this Web Map to your Experience Builder to test the functionality: `3298b42d5f534ab886fbe4b2364bb38f`
+   - This web map focuses on fictional indicator data for Guinea. Here is the likely formatting for the radar chart:
+     - Use the adm1_name for the series label
+     - Use cap_health, cap_food, cap_wash, cap_education, cap_protection, and cap_shelter as the Axes of the radar chart
+     - Example of the finished widget:
+       ![Example Experience Builder Radar Widget](../docs/assets/exb-example-radar-widget.png)
 
 7. Make changes as needed to the widget using Copilot. As you edit the widget code, the client should automatically update and you can refresh your browser to see changes.
+
+> [!TIP]
+> If you're building custom widgets for Experience Builder, keep them in their own repository rather than committing the entire Experience Builder Developer Edition alongside them. That way you version-control only your widget code, not the thousands of files that ship with the developer edition. For an example of this structure, see [custom-experience-builder-widgets](https://github.com/valdesrosier/custom-experience-builder-widgets).
+
+> [!NOTE]
+> If you're tracking your work in Git, add a `.gitignore` before you commit. The `node_modules/` folder holds tens of thousands of files you don't want in version control. Create a `.gitignore` in your project folder with this line:
+>
+> ```
+> node_modules/
+> ```
+>
+> Do this before your first commit. If you already staged `node_modules/`, run `git rm -r --cached node_modules/` to unstage it, then commit.

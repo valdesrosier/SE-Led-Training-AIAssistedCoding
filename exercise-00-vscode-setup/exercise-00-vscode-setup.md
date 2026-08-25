@@ -188,6 +188,10 @@ Run each command separately and read its output before continuing:
    npm --version
    ```
 
+   > **Windows note:** If the command above returns an error, try:
+   >
+   > `npm.cmd --version`
+
 The version commands should each print a version number. This workshop recommends Node.js `24.19.0` and npm `11.17.0`. If either command is not found, complete [Install Node.js](../docs/03-development-tools.md#install-nodejs) before starting the project-building exercises.
 
 <!--
@@ -203,3 +207,23 @@ If Copilot asks to run the command for you, use the **Review actions before appr
 
 > [!NOTE]
 > A terminal and Copilot Chat are different tools. The terminal runs commands on your computer; Chat is where you ask Copilot for help.
+
+### Updating your repository from the original
+
+Forked repositories won't automatically reflect changes from the original. To ensure you have the most up to date instructions for each of the exercises, open a new terminal in VS Code and run the following commands one by one:
+
+1.  ```
+    git remote add upstream https://github.com/valdesrosier/SE-Led-Training-AIAssistedCoding.git
+    ```
+2.  ```
+    git fetch upstream
+    ```
+3.  ```
+    git checkout main
+    ```
+4.  ```
+    git merge upstream/main
+    ```
+5.  ```
+    git push origin main
+    ```
