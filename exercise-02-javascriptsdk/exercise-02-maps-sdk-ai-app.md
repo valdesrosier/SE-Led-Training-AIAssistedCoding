@@ -134,6 +134,15 @@ Because the agent designs the app during the interview, the exact run command de
 
 Test and iterate with the agent as needed.
 
+> [!NOTE]
+> If you're tracking your work in Git, add a `.gitignore` before you commit. The `node_modules/` folder holds tens of thousands of files you don't want in version control. Create a `.gitignore` in your project folder with this line:
+>
+> ```
+> node_modules/
+> ```
+>
+> Do this before your first commit. If you already staged `node_modules/`, run `git rm -r --cached node_modules/` to unstage it, then commit.
+
 ## Step 7 — OPTIONAL — Diagnose and fix bugs
 
 - Use the **`/diagnosing-bugs`** skill on something that you notice is not working as expected.
