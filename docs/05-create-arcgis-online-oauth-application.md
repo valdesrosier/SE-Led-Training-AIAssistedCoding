@@ -62,13 +62,16 @@ Select **Create**.
 
 ![OAuth credentials review screen before creation](assets/arcgis-oauth-05-review.png)
 
-## Step 6: Copy the client ID
+## Step 6: Return later to copy the client ID
 
-After ArcGIS Online opens the new item's Overview page:
+After ArcGIS Online opens the new item's Overview page, confirm that the **Credentials** section displays a **Client ID**. Do not copy it yet. You will return to this step after you create an application and are ready to configure OAuth.
 
-1. Find the **Credentials** section.
-2. Copy the **Client ID**.
-3. Add the client ID to the configuration location expected by your application, such as an `.env.local` file.
+When the application exercise asks you to configure OAuth:
+
+1. Open the credentials item's Overview page.
+2. Find the **Credentials** section.
+3. Copy the **Client ID**.
+4. Add the client ID to the configuration location expected by your application, such as an `.env.local` file.
 
 The client ID identifies the OAuth application and is safe to use in browser code. It is not a password.
 
